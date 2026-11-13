@@ -1,0 +1,31 @@
+mahsulotlar={}
+i=-1
+while i!=0:
+    print("1.Mahsulotlarni ko'rish")
+    print("2.Mahsulot qo'shish")
+    print("3.Mahsulot qidirish")
+    print("4.Mahsulotni tahlillash")
+    print("5.Mahsulot sotish")
+    print("6.Hisobot")
+    print("0.Dasturdan chiqish")
+    i=int(input("Tanlovingizni kiriting: "))
+    if i==1:
+      for n,(nom,m) in enumerate(mahsulotlar.items(), start=1):
+        print(f"{n}.{nom}  narxi {m['narx']}  miqdor {m['miqdor']} ")
+    elif i==2:
+      while True:
+        b=int(input("Nechta mahsulot kiritishni hohlaysiz>> "))
+        for a in range(b):
+            nom=input("Mahsulot nomini kiriting:")
+            narx=int(input("Mahsulot narxini kiriting:"))
+            miqdor=int(input("Mahsulot miqdorini kiriting:"))
+            mahsulotlar[nom]={
+              "narx":narx,
+              "miqdor":miqdor
+            }
+            print("Mahsulotlar qo'shildi")
+        javob=input("Mahsulot qo'shishni davom ettirasizmi (ha/yo'q) >> ").lower()
+        if javob=="yo'q" or javob=="yoq":
+          break
+    elif i==0:
+      print("Dastur tugadi")
